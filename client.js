@@ -8,25 +8,8 @@ const connect = () => {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
-
-  conn.on("data", (data) => {
-    console.log(data);
-  });
-  //const arrayDir = ["Move: up", "Move: right", "Move: up"];
-  let startingTime = 50;
-
   conn.on("connect", () => {
     conn.write(`Name: XXX`);
-    // for (let arr of arrayDir) {
-    //   setTimeout(() => {
-    //     conn.write(arr);
-    //   }, startingTime);
-    //   startingTime += 300;
-    // }
-
-    // setInterval(() => {
-    //   conn.write("Move: up");
-    // }, startingTime);
   });
   return conn;
 };
