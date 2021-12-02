@@ -3,6 +3,14 @@ const con = connect();
 
 console.log("Connecting ...");
 
+const MESSAGES = {
+  1: "Say: This is not a game",
+  2: "Say: SEports!",
+  3: "Say: ha ha ha",
+  4: "Say: save yourself",
+  5: "Say: grrrr",
+};
+
 let connection;
 const setupInput = (con) => {
   connection = con;
@@ -20,6 +28,9 @@ const handleUserInput = function (data) {
   if (data === "s" || data === "\u001b[B") con.write("Move: down");
   if (data === "d" || data === "\u001b[C") con.write("Move: right");
   if (data === "a" || data === "\u001b[D") con.write("Move: left");
+  if (MESSAGES[data]) {
+    con.write(MESSAGES[data]);
+  }
   if (data === "\u0003") {
     process.exit();
   }
