@@ -1,15 +1,8 @@
 const { connect } = require("./client");
+const { MESSAGES } = require("./constants");
 const con = connect();
 
 console.log("Connecting ...");
-
-const MESSAGES = {
-  1: "Say: This is not a game",
-  2: "Say: SEports!",
-  3: "Say: ha ha ha",
-  4: "Say: save yourself",
-  5: "Say: grrrr",
-};
 
 let connection;
 const setupInput = (con) => {
